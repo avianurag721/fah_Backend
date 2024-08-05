@@ -35,6 +35,12 @@ require("./config/database").connect();
 cloudinaryConnect()
 
 app.use("/fah/v1", routes);
+app.get("/", (req, res) => {
+	return res.status(200).json({
+		success: true,
+		message:"connected to fah backend"
+	})
+})
 
 
 app.listen(PORT, () => {
